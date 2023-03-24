@@ -1,5 +1,3 @@
-
-
 const Page = require('./page');
 
 /**
@@ -8,33 +6,46 @@ const Page = require('./page');
 class LoginPage extends Page {
     /**
      * define selectors using getter methods
+     * 
      */
-    get inputUsername () {
-        return $('#username');
+
+    get clickOnMenu() {
+        return $('~open menu')
+    }
+    get ClickOnLoginBtn() {
+        return $('~menu item log in')
+    }
+    get inputUsername() {
+        return $('~Username input field');
     }
 
-    get inputPassword () {
-        return $('#password');
+    get inputPassword() {
+        return $('~Password input field');
     }
 
-    get btnSubmit () {
-        return $('button[type="submit"]');
+    get btnSubmit() {
+        return $('~Login button');
     }
 
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    async login (username, password) {
+    async login(username, password) {
+        await this.clickOnMenu.click();
+        await this.ClickOnLoginBtn.waitForDisplayed({ timeout: 15000 });
+        await this.ClickOnLoginBtn.click();
+        await this.inputUsername.waitForDisplayed({ timeout: 15000 });
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
+        await this.btnSubmit.waitForDisplayed({ timeout: 15000 });
         await this.btnSubmit.click();
     }
 
     /**
      * overwrite specific options to adapt it to page object
      */
-    open () {
+    open() {
         return super.open('login');
     }
 }
