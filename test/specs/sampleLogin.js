@@ -12,7 +12,7 @@ describe('My Login application', () => {
         const login = await $('~menu item log in');
         await login.waitForDisplayed({ timeout: 1500 });
         login.click();
-
+        await browser.saveScreenshot("./screenshot/login.png")
         //login screeen
         let userName = await $("~Username input field");
         await userName.waitForDisplayed({ timeout: 1500 })
@@ -87,9 +87,12 @@ describe('My Login application', () => {
         await comfirmlogOut.click();
         await comfirmlogOut.waitForDisplayed({ timeout: 5000 })
         await comfirmlogOut.click()
-       /* let LoginText = await $("//android.view.ViewGroup[@content-desc='container header']/android.widget.TextView");
-        let text = await LoginText.getValue();
-        console.log(text)*/
+        /* let LoginText = await $("//android.view.ViewGroup[@content-desc='container header']/android.widget.TextView");
+         let text = await LoginText.getValue();
+         console.log(text)*/
+
+        //save screenshot 
+        await browser.saveScreenshot("./screenshot/test.png")
 
 
     })
