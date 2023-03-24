@@ -56,7 +56,7 @@ exports.config = {
     //
     capabilities: [{
 
-        platformName: "android",
+        platformName: "Android",
         "appium:PlatformVersion": "13",
         "appium:deviceName": "Pixel",
         "appium:automationName": "UiAutomator2",
@@ -64,6 +64,7 @@ exports.config = {
         "appium:appPackage": "com.saucelabs.mydemoapp.rn",
         "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
         "appium:noReset": true
+
     }],
     //
     // ===================
