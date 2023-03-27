@@ -26,8 +26,9 @@ exports.config = {
     specs: [
         // './test/specs/**/*.js'
         // './test/specs/sampleLogin.js',
-       // './test/specs/scroll.js'
-       './test/specs/POMStrucutre.js'
+        // './test/specs/scroll.js'
+        // './test/specs/POMStrucutre.js'
+        './test/specs/TC_02_ValidateCatalogs.js'
 
     ],
     // Patterns to exclude.

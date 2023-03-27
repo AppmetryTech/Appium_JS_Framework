@@ -1,4 +1,4 @@
-const LoginPage = require('../pageobjects/login.page')
+const LoginPage = require('../../pageobjects/login.page')
 
 describe('My Login application', () => {
     before(function () {

@@ -1,5 +1,5 @@
 //const { default: driver } = require('appium-uiautomator2-driver/build/lib/driver')
-const LoginPage = require('../pageobjects/login.page')
+const LoginPage = require('../../pageobjects/login.page')
 const SecurePage = require('../pageobjects/secure.page')
 
 describe('My Login application', () => {
