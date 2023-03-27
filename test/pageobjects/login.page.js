@@ -3,7 +3,7 @@ const Page = require('./page');
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class LoginPage extends Page {
+class LoginPage {
     /**
      * define selectors using getter methods
      * 
@@ -42,12 +42,7 @@ class LoginPage extends Page {
         await this.btnSubmit.click();
     }
 
-    /**
-     * overwrite specific options to adapt it to page object
-     */
-    open() {
-        return super.open('login');
-    }
+
 }
 
 module.exports = new LoginPage();

@@ -25,8 +25,9 @@ exports.config = {
     //
     specs: [
         // './test/specs/**/*.js'
-       // './test/specs/sampleLogin.js',
-        './test/specs/swipeDown.js'
+        // './test/specs/sampleLogin.js',
+       // './test/specs/scroll.js'
+       './test/specs/POMStrucutre.js'
 
     ],
     // Patterns to exclude.
@@ -58,6 +59,7 @@ exports.config = {
     capabilities: [{
 
         platformName: "Android",
+        //"appium:app": "C:\\Users\\Appmetry\\Downloads\\saucelab.apk",
         "appium:PlatformVersion": "13",
         "appium:deviceName": "Pixel",
         "appium:automationName": "UiAutomator2",
