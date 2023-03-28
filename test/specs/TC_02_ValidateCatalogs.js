@@ -7,7 +7,7 @@ describe('Catalog items', () => {
         //await LoginPage.open();
         //const productName = "Sauce Labs Fleece Jacket"
         const productName = "Sauce Labs Onesie"
-        await Catalog.validateProduct(productName);
+        await Catalog.validateProduct();
 
     });
 
