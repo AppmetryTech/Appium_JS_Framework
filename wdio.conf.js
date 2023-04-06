@@ -29,6 +29,8 @@ exports.config = {
         // './test/specs/scroll.js'
         // './test/specs/POMStrucutre.js'
         './test/specs/TC_02_ValidateCatalogs.js'
+        //'./test/specs/YouTube_like.js'
+
 
     ],
     // Patterns to exclude.
@@ -65,9 +67,16 @@ exports.config = {
         "appium:deviceName": "Pixel",
         "appium:automationName": "UiAutomator2",
         "appium:udid": "emulator-5554",
+        "appium:forceAppLaunch": true,
+        /* "appium:appPackage": "com.google.android.youtube",
+         "appium:appActivity": "com.google.android.youtube.HomeActivity",*/
+        "appium:noReset": true,
+
         "appium:appPackage": "com.saucelabs.mydemoapp.rn",
         "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
-        "appium:noReset": true
+        //"appium:appPackage": "com.google.android.youtube",
+        // "appium:appActivity": "com.google.android.youtube.HomeActivity",
+        //"appium:noReset": true
 
     }],
     //
@@ -148,8 +157,13 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 600000
     },
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
     //
     // =====
     // Hooks

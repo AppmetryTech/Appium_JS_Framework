@@ -9,7 +9,7 @@ describe('My Login application', () => {
     })
 
     it('should login with valid credentials', async () => {
-        //await LoginPage.open();
+
         await LoginPage.login('bob@example.com', '10203040*');
 
     });

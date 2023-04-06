@@ -1,14 +1,11 @@
+const LoginPage = require('../pageobjects/login.page')
 const Catalog = require('../pageobjects/catalog.page')
 
 describe('Catalog items', () => {
-
-
     it('Validate Catalog items', async () => {
-        //await LoginPage.open();
-        //const productName = "Sauce Labs Fleece Jacket"
+        await LoginPage.login('bob@example.com', '10203040');
         const productName = "Sauce Labs Onesie"
-        await Catalog.validateProduct();
-
+        await Catalog.validateProduct(productName);
     });
 
 })
