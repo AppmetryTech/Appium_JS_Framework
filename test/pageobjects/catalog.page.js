@@ -1,10 +1,16 @@
+const { expect } = require("chai");
+
 class Catalog {
 
     get productsList() { return $$("~store item text") }
-
     get product() { return $("(//android.view.ViewGroup[@content-desc=\"store item\"])[3]/android.view.ViewGroup[1]/android.widget.ImageView"); }
+    get productName() {
+        return $("//android.view.ViewGroup[@content-desc='container header']/android.widget.TextView")
+    }
+    get productPrice() { return $('~product price') }
 
     async validateProduct(productName) {
+
         await this.product.waitForDisplayed({ timeout: 5000 });
         // get device dimensions
         const { height, width } = await driver.getWindowRect();
@@ -40,6 +46,16 @@ class Catalog {
             ]);
         }
 
+    }
+
+    async validateProductDetails(name, price) {
+        let actualProductName = await this.productName.getText();
+        console.log("Name  ----> " + name)
+        expect(actualProductName).to.be.equal(name);
+        let productPrice = await this.productPrice.getText();
+        let amount = await productPrice.match(/\$(\d+\.\d+)/)[1];
+        console.log("extracted number ----> " + amount);
+        expect(parseFloat(amount)).to.be.equal(price);
     }
 
     async validateProductFilter() {
