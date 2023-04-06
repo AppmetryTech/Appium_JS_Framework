@@ -1,13 +1,16 @@
 const LoginPage = require('../pageobjects/login.page')
 const Catalog = require('../pageobjects/catalog.page')
 
+let productName = "Sauce Labs Onesie"
+//let productName = "Test.allTheThings() T-Shirt"
+let price = 7.99;
+
 describe('Catalog items', () => {
     it('Validate Catalog items', async () => {
         await LoginPage.login('bob@example.com', '10203040');
-        const productName = "Sauce Labs Onesie"
         await Catalog.validateProduct(productName);
-
-        await Catalog.validateProductDetails(productName, 7.99)
+        await Catalog.validateProductDetails(productName, price);
+        await Catalog.addToCart();
     });
 
 

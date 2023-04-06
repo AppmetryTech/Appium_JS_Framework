@@ -1,4 +1,6 @@
-const { expect } = require("chai");
+//const { expect as expectChai } = require("chai");
+//import { expect as expectChai } from 'chai'
+const expectChai = require('chai').expect;
 
 class Catalog {
 
@@ -8,6 +10,10 @@ class Catalog {
         return $("//android.view.ViewGroup[@content-desc='container header']/android.widget.TextView")
     }
     get productPrice() { return $('~product price') }
+
+    get addToCartBtn() { return $('~Add To Cart button') }
+
+    get cartBadge() { return $('~cart badge') }
 
     async validateProduct(productName) {
 
@@ -51,11 +57,11 @@ class Catalog {
     async validateProductDetails(name, price) {
         let actualProductName = await this.productName.getText();
         console.log("Name  ----> " + name)
-        expect(actualProductName).to.be.equal(name);
+        expectChai(actualProductName).to.be.equal(name);
         let productPrice = await this.productPrice.getText();
         let amount = await productPrice.match(/\$(\d+\.\d+)/)[1];
         console.log("extracted number ----> " + amount);
-        expect(parseFloat(amount)).to.be.equal(price);
+        expectChai(parseFloat(amount)).to.be.equal(price);
     }
 
     async validateProductFilter() {
@@ -63,8 +69,14 @@ class Catalog {
     }
 
     async addToCart() {
+        await this.addToCartBtn.waitForDisplayed();
+        await this.addToCartBtn.click();
+    }
 
-
+    async validateCartBadge(ExpcartCount) {
+        await this.cartBadge.waitForDisplayed();
+        let cartCount = await this.cartBadge.getText();
+        expectChai(parseInt(cartCount)).to.be.equal(ExpcartCount);
     }
 
 }
