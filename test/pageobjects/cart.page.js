@@ -14,7 +14,7 @@ class Cart {
         await this.counterPlus.waitForDisplayed();
         // Click on the plus icon the number of times equal to the input
         for (let i = 1; i < Cartcount; i++) {
-            await driver.setImplicitTimeout(1000)
+            await driver.setImplicitTimeout(2000)
             await this.counterPlus.click();
         }
         await this.cartBadge.waitForDisplayed();
@@ -34,6 +34,15 @@ class Cart {
         let Finalprice = await price.match(/\$(\d+\.\d+)/)[1];
         console.log("Final Price --> ", Finalprice);
         expectChai(parseFloat(Finalprice)).to.be.equal(TotalPrice);
+    }
+
+    async validateCardBadge(expCartBadgeCount) {
+        await this.cartBadge.waitForDisplayed();
+        let cartBadgeCount = await this.cartBadge.getText();
+        expectChai(cartBadgeCount).to.be.equal(expCartBadgeCount)
+    }
+    async clickOnCheckOut() {
+        await this.checkOut.click();
     }
 
 }
