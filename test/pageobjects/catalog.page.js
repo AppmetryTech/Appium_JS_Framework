@@ -71,11 +71,13 @@ class Catalog {
     async addToCart() {
         await this.addToCartBtn.waitForDisplayed();
         await this.addToCartBtn.click();
+        await this.cartBadge.click();
     }
 
     async validateCartBadge(ExpcartCount) {
         await this.cartBadge.waitForDisplayed();
         let cartCount = await this.cartBadge.getText();
+        console.log(cartCount);
         expectChai(parseInt(cartCount)).to.be.equal(ExpcartCount);
     }
 
