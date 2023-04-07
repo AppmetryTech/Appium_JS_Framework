@@ -14,6 +14,8 @@ class CheckOut {
     get expiryDate() { return $('"~Expiration Date* input field') }
     get cvv() { return $('~Security Code* input field') }
     get reviewOrder() { return $('~Review Order button') }
+    get placeOrder() { return $("~Place Order button") };
+
 
     async enterFullName(fullName) {
         await this.fullName.waitForDisplayed({ timeout: 2000 });
@@ -44,11 +46,21 @@ class CheckOut {
         await this.paymentBtn.click();
     }
 
-    async enterPaymentDetails(cardNo,expiryDate,cvv){
+    async enterPaymentDetails(cardNo, expiryDate, cvv) {
         await enterCardNo.setValue(cardNo);
         await enterExpiryDate.setValue(expiryDate);
         await enterCVV.setValue(cvv);
 
+    }
+
+    async clickreviewOrder() {
+        await reviewOrder.waitForDisplayed({ timeout: 3000 });
+        await reviewOrder.click();
+    }
+
+    async placeOrder() {
+        await placeOrder.waitForDisplayed({ timeout: 2000 })
+        await placeOrder.click()
     }
 
 
