@@ -28,8 +28,9 @@ exports.config = {
         // './test/specs/sampleLogin.js',
         // './test/specs/scroll.js'
         // './test/specs/POMStrucutre.js'
-        './test/specs/TC_02_ValidateCatalogs.js'
+        //'./test/specs/TC_02_ValidateCatalogs.js'
         //'./test/specs/YouTube_like.js'
+        './test/specs/TC_03_ValidateCheckOut.js'
 
 
     ],

@@ -11,10 +11,10 @@ class CheckOut {
     get country() { return $('~Country* input field') }
     get paymentBtn() { return $('~To Payment button') }
     get cardNo() { return $('~Card Number* input field') }
-    get expiryDate() { return $('"~Expiration Date* input field') }
+    get expiryDate() { return $('~Expiration Date* input field') }
     get cvv() { return $('~Security Code* input field') }
     get reviewOrder() { return $('~Review Order button') }
-    get placeOrder() { return $("~Place Order button") };
+    get placeOrder() { return $('~Place Order button') };
 
 
     async enterFullName(fullName) {
@@ -22,17 +22,17 @@ class CheckOut {
         await this.fullName.setValue(fullName);
     }
 
-    async enterAddress(addLine1, addLine2) {
+    async enterAddress(addLine1) {
         await this.addLine1.setValue(addLine1);
-        await this.addLine2.setValue(addLine2);
+        // await this.addLine2.setValue(addLine2);
     }
 
     async enterCity(city) {
         await this.city.setValue(city);
     }
 
-    async enterState(state) {
-        await this.state.setValue(state);
+    async enterState(State) {
+        await this.state.setValue(State);
     }
     async enterZipCode(zipcode) {
         await this.zipCode.setValue(zipcode);
@@ -47,20 +47,20 @@ class CheckOut {
     }
 
     async enterPaymentDetails(cardNo, expiryDate, cvv) {
-        await enterCardNo.setValue(cardNo);
-        await enterExpiryDate.setValue(expiryDate);
-        await enterCVV.setValue(cvv);
+        await this.cardNo.setValue(cardNo);
+        await this.expiryDate.setValue(expiryDate);
+        await this.cvv.setValue(cvv);
 
     }
 
     async clickreviewOrder() {
-        await reviewOrder.waitForDisplayed({ timeout: 3000 });
-        await reviewOrder.click();
+        await this.reviewOrder.waitForDisplayed({ timeout: 3000 });
+        await this.reviewOrder.click();
     }
 
-    async placeOrder() {
-        await placeOrder.waitForDisplayed({ timeout: 2000 })
-        await placeOrder.click()
+    async clickplaceOrder() {
+        await this.placeOrder.waitForDisplayed({ timeout: 2000 })
+        await this.placeOrder.click()
     }
 
 

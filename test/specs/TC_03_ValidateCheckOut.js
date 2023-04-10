@@ -13,6 +13,7 @@ let addLine1 = "Shivaji Park"
 let addLine2 = "Lay Bae city"
 let city = "Delhi"
 let state = "Delhi"
+let zipCode = 453290
 let country = "India"
 let cardNo = "3258 1265 7568 789"
 let expiryDate = "03/25"
@@ -25,13 +26,16 @@ describe('Validate CheckOut', () => {
         await Catalog.addToCart();
         await Cart.clickOnCheckOut();
         await CheckOut.enterFullName(fullName);
-        await CheckOut.enterAddress(addLine1, addLine2);
+        await CheckOut.enterAddress(addLine1);
         await CheckOut.enterCity(city);
-        await CheckOut.state(state);
-        await CheckOut.country(country);
+        await CheckOut.enterState(state);
+        await CheckOut.enterZipCode(zipCode);
+        await CheckOut.entercountry(country);
+        await CheckOut.enterFullName(fullName);
+        await CheckOut.clickOnPayment();
         await CheckOut.enterPaymentDetails(cardNo, expiryDate, cvv);
         await CheckOut.clickreviewOrder();
-        await CheckOut.placeOrder();
+        await CheckOut.clickplaceOrder();
     });
 })
 
