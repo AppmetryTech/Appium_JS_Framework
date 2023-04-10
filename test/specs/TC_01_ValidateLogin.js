@@ -1,4 +1,5 @@
 const LoginPage = require('../../pageobjects/login.page')
+const { LoginData } = require('../../Data/login_data')
 
 describe('My Login application', () => {
     before("Start APPIUM server", async () => {
@@ -10,7 +11,7 @@ describe('My Login application', () => {
 
     it('should login with valid credentials', async () => {
 
-        await LoginPage.login('bob@example.com', '10203040*');
+        await LoginPage.login(LoginData.Email, LoginData.pwd);
 
     });
 
