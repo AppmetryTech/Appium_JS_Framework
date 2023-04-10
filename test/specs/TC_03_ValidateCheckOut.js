@@ -8,8 +8,12 @@ const LoginData = require('../../Data/login_data.json')
 const AddressData = require('../../Data/address_data.json')
 const ProductData = require('../../Data/product_detail.json')
 const PaymentData = require('../../Data/payment_data.json')
+const { remote } = require('webdriverio');
+
 
 describe('Validate CheckOut', () => {
+
+
     it('Validate Checkout', async () => {
         await LoginPage.login(LoginData.Email, LoginData.Pwd);
         await Catalog.validateProduct(ProductData.productName);
@@ -27,5 +31,13 @@ describe('Validate CheckOut', () => {
         await CheckOut.clickreviewOrder();
         await CheckOut.clickplaceOrder();
     });
+
+    it("Validate Products", async () => {
+        console.log("Test2")
+    })
+
+    it("Validate Product Details", async () => {
+        console.log("Test3")
+    })
 })
 
