@@ -60,18 +60,19 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities:/* [{
 
         platformName: "Android",
         //"appium:app": "C:\\Users\\Appmetry\\Downloads\\saucelab.apk",
-        "appium:PlatformVersion": "13",
-        "appium:deviceName": "Pixel",
+        "appium:PlatformVersion": "9",
+        "appium:deviceName": "Vivo Y15",
         "appium:automationName": "UiAutomator2",
-        "appium:udid": "emulator-5554",
+        //"appium:udid": "emulator-5554",
+        "appium:udid": "U47TLZUOIZDIEAKR",
         "appium:forceAppLaunch": true,
         /* "appium:appPackage": "com.google.android.youtube",
          "appium:appActivity": "com.google.android.youtube.HomeActivity",*/
-        "appium:noReset": true,
+      /*  "appium:noReset": true,
 
         "appium:appPackage": "com.saucelabs.mydemoapp.rn",
         "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
@@ -79,7 +80,7 @@ exports.config = {
         // "appium:appActivity": "com.google.android.youtube.HomeActivity",
         //"appium:noReset": true
 
-    }],
+    }],*/[{}],
     //
     // ===================
     // Test Configurations
