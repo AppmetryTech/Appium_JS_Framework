@@ -1,18 +1,17 @@
-const LoginPage = require('../../pageobjects/login.page')
-const { LoginData } = require('../../Data/login_data')
+//@ts-check
+const LoginData = require('../../Data/login_data.json')
+const LoginPage = require('../pageobjects/login.page')
+
 
 describe('My Login application', () => {
-    before("Start APPIUM server", async () => {
-        console.log("BEFORE ALL TEST CASES")
-    })
-    after("Kill Server", async () => {
-        console.log("AFTER ALL TEST CASES")
-    })
-
     it('should login with valid credentials', async () => {
 
-        await LoginPage.login(LoginData.Email, LoginData.pwd);
-
+        await LoginPage.login(LoginData.Email, LoginData.Pwd, LoginData.errorMessage);
+        await driver.deleteSession();
     });
+
+    it('Login with locked credentials', async () => {
+        await LoginPage.login(LoginData.lockedEmail, LoginData.Pwd, LoginData.errorMessage)
+    })
 
 })

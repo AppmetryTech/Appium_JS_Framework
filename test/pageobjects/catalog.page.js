@@ -22,11 +22,11 @@ class Catalog {
         const { height, width } = await driver.getWindowRect();
 
         console.log("height --> " + height + " width --> " + width)
-        /*const startX = width / 2;
-        const startY = height / 4;
-        const endX = width / 2;
-        const endY = height / 2;
-        console.log(startX, startY, endX, endY)*/
+        const startX = width / 2;
+        const startY = height * 0.8;
+        // const endX = width / 2;
+        const endY = height * 0.25;
+        console.log(startX, startY, endY)
 
         await driver.setImplicitTimeout(10000);
         let ProductCount = await this.productsList.length;
@@ -34,7 +34,7 @@ class Catalog {
 
         // Find all product elements and loop through them to find the matching product
 
-        for (let i = 0; i <= ProductCount; i++) {
+        for (let i = 0; i < ProductCount; i++) {
             const product = await this.productsList[i];
             const titleElement = await product.getText();
             console.log("Title --> " + titleElement)
@@ -44,9 +44,9 @@ class Catalog {
                 break;
             }
             await driver.touchPerform([
-                { action: 'press', options: { x: 530, y: 1928 } },
+                { action: 'press', options: { x: startX, y: startY } },
                 { action: 'wait', options: { ms: 1000 } },
-                { action: 'moveTo', options: { x: 530, y: 986 } },
+                { action: 'moveTo', options: { x: startX, y: endY } },
                 { action: 'release', options: {} }
 
             ]);

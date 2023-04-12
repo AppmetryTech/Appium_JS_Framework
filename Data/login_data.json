@@ -1,4 +1,6 @@
 {
     "Email": "bob@example.com",
-    "Pwd": "10203040"
+    "Pwd": "10203040",
+    "lockedEmail": "alice@example.com",
+    "errorMessage": "Sorry, this user has been locked out."
 }

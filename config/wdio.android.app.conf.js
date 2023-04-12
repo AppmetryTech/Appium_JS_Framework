@@ -5,8 +5,10 @@ const config = require('../wdio.conf').config;
 // Specs
 // ============
 config.specs = [
-    // './tests/android/specs/**/app*.spec.js',
-    '../test/specs/app*.spec.js',
+    // '../test/specs/app*.spec.js',
+    //'../test/specs/app.TC_03_ValidateCheckOut.spec.js'
+    // '../test/specs/RealDeviceRecorded.spec.js'
+    '../test/specs/app.TC_01_ValidateLogin.spec.js'
 ];
 
 // ============
@@ -27,10 +29,10 @@ config.capabilities = [
         // app: path.join(process.cwd(), './apps/saucelab.apk'),
         "appium:appPackage": "com.saucelabs.mydemoapp.rn",
         "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
-        // Read the reset strategies very well, they differ per platform, see
-        // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
+
         "appium:noReset": true,
         "appium:forceAppLaunch": true,
+
 
     },
 ];
