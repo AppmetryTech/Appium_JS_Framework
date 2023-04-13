@@ -2,7 +2,7 @@ exports.config = {
 
     runner: 'local',
 
-    port: 4723,
+   // port: 4723,
 
     exclude: [
         // 'path/to/excluded/files'
@@ -30,7 +30,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['appium'],
-    appium: {
+   /* appium: {
         command: 'appium',
         args: {
             address: 'local',
@@ -38,7 +38,7 @@ exports.config = {
             logPath: './logs/',
             commandTimeout: '7200'
         }
-    },
+    },*/
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

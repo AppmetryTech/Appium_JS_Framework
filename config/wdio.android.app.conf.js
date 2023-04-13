@@ -1,4 +1,3 @@
-const path = require('path');
 const config = require('../wdio.conf').config;
 
 // ============
@@ -8,7 +7,8 @@ config.specs = [
     // '../test/specs/app*.spec.js',
     //'../test/specs/app.TC_03_ValidateCheckOut.spec.js'
     // '../test/specs/RealDeviceRecorded.spec.js'
-    '../test/specs/app.TC_01_ValidateLogin.spec.js'
+    // '../test/specs/app.TC_01_ValidateLogin.spec.js'
+    '../test/specs/demo.spec.js'
 ];
 
 // ============
@@ -36,5 +36,8 @@ config.capabilities = [
 
     },
 ];
+
+
+
 
 exports.config = config;

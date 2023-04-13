@@ -25,19 +25,19 @@ describe('Validate CheckOut', () => {
         await CheckOut.enterState(AddressData.state);
         await CheckOut.enterZipCode(AddressData.zipCode);
         await CheckOut.entercountry(AddressData.country);
-        await CheckOut.enterFullName(AddressData.fullName);
         await CheckOut.clickOnPayment();
+        await CheckOut.enterFullName(AddressData.fullName);
         await CheckOut.enterPaymentDetails(PaymentData.cardNo, PaymentData.expiryDate, PaymentData.cvv);
         await CheckOut.clickreviewOrder();
         await CheckOut.clickplaceOrder();
     });
 
-    it("Validate Products", async () => {
-        console.log("Test2")
+    it("LogOut", async () => {
+        await LoginPage.logOut();
     })
 
-    it("Validate Product Details", async () => {
-        console.log("Test3")
-    })
+    /* it("Validate Product Details", async () => {
+         console.log("Test3")
+     })*/
 })
 
