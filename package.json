@@ -7,9 +7,9 @@
     "android.app": "wdio run ./config/wdio.android.app.conf.js",
     "parallel.device": "wdio run ./config/wdio.grouping-testscripts-parallel.js",
     "test": "echo \"Error: no test specified\" && exit 1",
- 
     "wdio": "wdio run ./main.js",
-    "test1": "wdio run ./config/wdio.grouping-testscripts-parallel.js"
+    "test1": "wdio run ./config/wdio.grouping-testscripts-parallel.js",
+    "webview": "wdio run ./config/webview.config.js"
   },
   "keywords": [],
   "author": "",

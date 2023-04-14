@@ -49,12 +49,12 @@ class LoginPage {
      */
     async login(username, password, expectedErrorMessage) {
         await this.clickOnMenu.click();
-        await this.ClickOnLoginBtn.waitForDisplayed({ timeout: 15000 });
+        await this.ClickOnLoginBtn.waitForDisplayed({ timeout: 1500 });
         await this.ClickOnLoginBtn.click();
-        await this.inputUsername.waitForDisplayed({ timeout: 15000 });
+        await this.inputUsername.waitForDisplayed({ timeout: 1500 });
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
-        await this.btnSubmit.waitForDisplayed({ timeout: 15000 });
+        await this.btnSubmit.waitForDisplayed({ timeout: 1500 });
         await this.btnSubmit.click();
 
         /* if (await this.errorMessage.isDisplayed()) {
@@ -83,6 +83,11 @@ class LoginPage {
         await this.clickOnMenu.click();
         await this.ClickOnLoginBtn.waitForDisplayed({ timeout: 15000 });
         await this.drawingBtn.click();
+    }
+
+    async clickMenu() {
+        await this.clickOnMenu.click();
+
     }
 
 

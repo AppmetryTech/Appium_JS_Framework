@@ -10,6 +10,7 @@ describe('My Login application', () => {
 
         await LoginPage.login(LoginData.Email, LoginData.Pwd, LoginData.errorMessage);
         await LoginPage.logOut();
+        
 
     });
 
