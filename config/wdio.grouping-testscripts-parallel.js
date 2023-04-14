@@ -35,19 +35,19 @@ config.capabilities = [
 
     }
 ]
-config.specs = [
+/*config.specs = [
     //'../test/specs/app.TC_01_ValidateLogin.spec.js',
 
     //'../test/specs/app.TC_03_ValidateCheckOut.spec.js'
     '../test/specs/TC_Demo.spec.js'
-],
-    // define specific suites   //to run suite cmd :- npm run test1 --suite login  or to run multiple suite: npm run test1 --suite login --suite otherFeature
-    config.suites = {
-        login: [
-            './test/specs/app.TC_01_ValidateLogin.spec.js',
-            './test/specs/app.TC_03_ValidateCheckOut.spec.js'
-        ]
+],*/
+// define specific suites   //to run suite cmd :- npm run test1 -- --suite login  or to run multiple suite: npm run test1 -- --suite login -- --suite otherFeature
+config.suites = {
+    login: [
+        '../test/specs/app.TC_01_ValidateLogin.spec.js',
+        '../test/specs/app.TC_03_ValidateCheckOut.spec.js'
+    ]
 
-    }
+}
 
 exports.config = config
