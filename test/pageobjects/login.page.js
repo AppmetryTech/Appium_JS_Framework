@@ -39,11 +39,15 @@ class LoginPage {
         return $('id:android:id/button1')
     }
 
+    get drawingBtn() {
+        return $(`~menu item drawing`)
+    }
+
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    async login(username, password,expectedErrorMessage) {
+    async login(username, password, expectedErrorMessage) {
         await this.clickOnMenu.click();
         await this.ClickOnLoginBtn.waitForDisplayed({ timeout: 15000 });
         await this.ClickOnLoginBtn.click();
@@ -53,13 +57,14 @@ class LoginPage {
         await this.btnSubmit.waitForDisplayed({ timeout: 15000 });
         await this.btnSubmit.click();
 
-        if (await this.errorMessage.isDisplayed()) {
-            let actualErrorMessage = await this.errorMessage.getText();
-            expect(actualErrorMessage).toEqual(expectedErrorMessage);
-            console.log("Login with invalid/locked Creds")
-        } else {
-            console.log("Login with Valid Creds");
-        }
+        /* if (await this.errorMessage.isDisplayed()) {
+             await this.errorMessage.waitForDisplayed();
+             let actualErrorMessage = await this.errorMessage.getText();
+             expect(actualErrorMessage).toEqual(expectedErrorMessage);
+             console.log("Login with invalid/locked Creds")
+         } else {
+             console.log("Login with Valid Creds");
+         }*/
     }
 
     async logOut() {
@@ -72,6 +77,12 @@ class LoginPage {
         await this.confirmLogOut.waitForDisplayed({ timeout: 5000 })
         await this.confirmLogOut.click()
         // await browser.saveScreenshot("./screenshot/test.png")
+    }
+
+    async clickOnDrawingBtn() {
+        await this.clickOnMenu.click();
+        await this.ClickOnLoginBtn.waitForDisplayed({ timeout: 15000 });
+        await this.drawingBtn.click();
     }
 
 

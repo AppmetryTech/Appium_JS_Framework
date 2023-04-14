@@ -30,9 +30,10 @@ describe('Validate CheckOut', () => {
         await CheckOut.enterPaymentDetails(PaymentData.cardNo, PaymentData.expiryDate, PaymentData.cvv);
         await CheckOut.clickreviewOrder();
         await CheckOut.clickplaceOrder();
+        await LoginPage.logOut();
     });
 
-    it("LogOut", async () => {
+   /* it("LogOut", async () => {
         await LoginPage.logOut();
     })
 
